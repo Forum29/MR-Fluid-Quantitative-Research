@@ -1,0 +1,5 @@
+layer,operating_mode,key_inputs,outputs,quantitative_conclusion,evidence_status
+P1,Non-uniform-field pinch mode,Formulation / field / velocity path,"K, pressure-flow slope, offset",Increasing path gives much larger slope amplification for lower-Fe fluids; response changes with formulation and path.,Experimental; no new measurements in this project.
+P2,Uniform-field shear rheology,Magnetic flux density / shear rate / model,"Yield stress, viscosity parameter, R2",Yield stress rises strongly with B; Bingham and Casson yield estimates differ materially.,Experimental literature; four field points.
+P3,Transient shear response,Shear rate / magnetization / carrier viscosity,"T63, T90, dead time, master curve",Response is millisecond-scale and depends on operating/material conditions.,Experimental literature; ranges retained where point pairs unavailable.
+Synthesis,Engineering design,Field + formulation + path + transient constraints,Target steady response subject to response-time requirement,"The design variable should be the minimum excitation that meets both steady and dynamic performance, not maximum field alone.",Mechanistic synthesis; cross-study pooling avoided.

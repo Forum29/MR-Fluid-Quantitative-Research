@@ -1,0 +1,21 @@
+path,role
+README.md,Project overview and reproducibility instructions
+CITATION.cff,GitHub citation metadata
+.gitignore,Git hygiene
+report/MITACS_LEVEL_RESEARCH_REPORT.md,Final research report
+src/MR_Fluid_quantitative_analysis.py,Reproducible analysis pipeline
+data/00_MASTER_literature_dataset_43_records.csv,43-record provenance dataset
+data/01_P1_nonuniform_field_fluid_properties.csv,P1 source data
+data/02_P1_nonuniform_field_flow_response.csv,P1 source data
+data/03_P2_rheology_yield_stress.csv,P2 source data
+data/04_P3_transient_fluid_properties.csv,P3 source data
+data/05_P3_transient_response_times.csv,P3 source data
+data/06_P3_other_reported_results.csv,P3 source data
+data/DATA_DICTIONARY.md,Dataset field definitions and provenance rules
+results/,Derived quantitative outputs
+figures/,Regenerated research figures
+references/SOURCE_PAPERS.md,Official source-paper access information
+audit/SOURCE_VERIFICATION.md,Source verification record
+audit/FINAL_AUDIT_CHECKLIST.md,Final scientific freeze checklist
+audit/REPRODUCIBILITY_TESTS.md,Final regeneration and automated test record
+requirements.txt,Python dependencies

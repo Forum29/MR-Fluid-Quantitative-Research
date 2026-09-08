@@ -1,0 +1,3 @@
+sample_or_scope,source_location,topic,condition_1,condition_1_value,condition_1_unit,condition_2,condition_2_value,condition_2_unit,reported_result,notes,data_status
+Magnetic field,Conclusion / magnetic response,Magnetic-field response,maximum_current,slightly current-dependent,A,,,,T90I = 0.335 ms,Initial shear-stress dead time reported as 0.4 ms.,reported / fitted relation in paper
+All measured fluids,Conclusion / master curve,Non-dimensional response-time master curve,coefficient,4.1939,,exponent,-0.35,,master_curve = T* = 4.1939 Mn^-0.35 nan,Generalized from measured data.,reported / fitted relation in paper

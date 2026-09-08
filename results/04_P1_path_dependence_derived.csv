@@ -1,0 +1,13 @@
+sample,field_input_A_turns,K_increasing,K_decreasing,decreasing_to_increasing_ratio,path_gap_pct_of_increasing,interpretation
+MRF-122EG,900,6.6,1.74,0.26363636363636367,73.63636363636363,Path-dependence indicator; not a thermodynamic hysteresis measurement.
+MRF-122EG,600,6.71,1.69,0.2518628912071535,74.81371087928464,Path-dependence indicator; not a thermodynamic hysteresis measurement.
+MRF-122EG,300,2.27,,,,Path-dependence indicator; not a thermodynamic hysteresis measurement.
+MRF-122EG,0,1.0,1.0,1.0,0.0,Path-dependence indicator; not a thermodynamic hysteresis measurement.
+MRF-132DG,900,2.76,1.58,0.5724637681159421,42.75362318840579,Path-dependence indicator; not a thermodynamic hysteresis measurement.
+MRF-132DG,600,2.64,1.45,0.5492424242424242,45.07575757575758,Path-dependence indicator; not a thermodynamic hysteresis measurement.
+MRF-132DG,300,1.75,1.46,0.8342857142857143,16.571428571428573,Path-dependence indicator; not a thermodynamic hysteresis measurement.
+MRF-132DG,0,1.0,1.0,1.0,0.0,Path-dependence indicator; not a thermodynamic hysteresis measurement.
+MRF-140CG,900,1.54,1.81,1.1753246753246753,-17.532467532467532,Path-dependence indicator; not a thermodynamic hysteresis measurement.
+MRF-140CG,600,1.61,1.71,1.062111801242236,-6.211180124223593,Path-dependence indicator; not a thermodynamic hysteresis measurement.
+MRF-140CG,300,1.53,1.56,1.0196078431372548,-1.960784313725492,Path-dependence indicator; not a thermodynamic hysteresis measurement.
+MRF-140CG,0,1.0,1.0,1.0,0.0,Path-dependence indicator; not a thermodynamic hysteresis measurement.

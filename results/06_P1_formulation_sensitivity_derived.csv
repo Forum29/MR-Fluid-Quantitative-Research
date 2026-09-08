@@ -1,0 +1,4 @@
+sample,iron_content_vol_percent,base_viscosity_at_30C_cP,source_table,data_status,max_K_increasing,base_viscosity_cP_to_reference,max_K_to_reference
+MRF-122EG,22,56,Table 1,reported in paper,6.71,1.0,1.0
+MRF-132DG,32,156,Table 1,reported in paper,2.76,2.7857142857142856,0.4113263785394933
+MRF-140CG,40,648,Table 1,reported in paper,1.61,11.571428571428571,0.23994038748137111

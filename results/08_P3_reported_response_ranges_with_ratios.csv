@@ -1,0 +1,3 @@
+samples,shear_rate_range_per_s,magnetic_or_test_condition,T90_range_ms,source_location,notes,data_status,endpoint_1_ms,endpoint_2_ms,max_reported_ms,min_reported_ms,max_to_min_ratio
+MRHCCS4-A / MRHCCS4-B,11–218,2,5.5–1.9,Fig. 5C / Results text,Higher shear rate corresponds to shorter response time.,reported range; exact pairs not reconstructed,5.5,1.9,5.5,1.9,2.8947368421052633
+MRF-132DG / MRC-C1L,varied,lower than LR fluids,1.4–0.8,Results text / conclusion,Exact shear-rate-to-response-time pairs are not reported in the text.,reported range; exact pairs not reconstructed,1.4,0.8,1.4,0.8,1.7499999999999998

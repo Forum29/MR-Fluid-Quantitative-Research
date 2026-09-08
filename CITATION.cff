@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "Magnetorheological Fluid Response Under Magnetic Excitation"
+type: software
+message: "If you use this repository, please cite the project and the three source papers listed in references/SOURCE_PAPERS.md."
+authors:
+  - family-names: Tailor
+    given-names: Forum
+    affiliation: "Zeal College of Engineering and Research"
+version: "1.0.0"
+date-released: 2026-09-08
+keywords:
+  - magnetorheological fluids
+  - rheology
+  - smart materials
+  - quantitative literature analysis
+  - Python

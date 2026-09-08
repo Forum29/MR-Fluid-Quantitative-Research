@@ -1,0 +1,10 @@
+sample,field_input_A_turns,sweep_direction,pressure_flow_slope_k_bar_min_per_L,slope_factor_K,source_table,notes,data_status,delta_K_from_previous_field,field_increment_A,incremental_K_per_A
+MRF-122EG,300,Velocity increase,0.55,2.27,Table 2,Offset=0.36 bar; R²=0.97,reported in paper,,,
+MRF-122EG,600,Velocity increase,1.63,6.71,Table 2,Offset=0.48 bar; R²=0.98,reported in paper,4.4399999999999995,300.0,0.014799999999999999
+MRF-122EG,900,Velocity increase,1.6,6.6,Table 2,Offset=0.66 bar; R²=0.98,reported in paper,-0.11000000000000032,300.0,-0.00036666666666666775
+MRF-132DG,300,Velocity increase,0.95,1.75,Table 3,Offset=0.78 bar; R²=0.99,reported in paper,,,
+MRF-132DG,600,Velocity increase,1.43,2.64,Table 3,Offset=1.31 bar; R²=0.97,reported in paper,0.8900000000000001,300.0,0.002966666666666667
+MRF-132DG,900,Velocity increase,1.5,2.76,Table 3,Offset=1.65 bar; R²=0.97,reported in paper,0.11999999999999966,300.0,0.0003999999999999989
+MRF-140CG,300,Velocity increase,2.59,1.53,Table 4,Offset=1.4 bar; R²=0.99,reported in paper,,,
+MRF-140CG,600,Velocity increase,2.74,1.61,Table 4,Offset=2.03 bar; R²=0.99,reported in paper,0.08000000000000007,300.0,0.0002666666666666669
+MRF-140CG,900,Velocity increase,2.62,1.54,Table 4,Offset=2.54 bar; R²=0.98,reported in paper,-0.07000000000000006,300.0,-0.00023333333333333355

@@ -1,0 +1,5 @@
+sample,solid_content_weight_percent,MR_fluid_viscosity_at_40C_Pa_s,carrier_fluid_viscosity_40C_25C_Pa_s_reported,source_table,notes,data_status
+MRF-132DG,80.98,0.114,0.011/0.018,Table 1,Average particle size: Spherical 2.1 µm,reported in paper
+MRHCCS4-A,70.0,0.167,0.03/0.051,Table 1,Average particle size: Spherical 1.8 µm,reported in paper
+MRHCCS4-B,80.0,0.237,0.03/0.051,Table 1,Average particle size: Spherical 1.8 µm,reported in paper
+MRC-C1L,80.0,0.108,0.008/0.011,Table 1,Average particle size: Spherical 1–5 µm,reported in paper

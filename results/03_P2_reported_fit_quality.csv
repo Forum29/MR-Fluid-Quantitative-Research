@@ -1,0 +1,9 @@
+magnetic_flux_density_T,model,yield_stress_Pa,fitting_details_reported_in_paper,R2_reported
+0.23,Bingham,1369,Fitting equation y=1.15x+1369; R²=0.991; viscosity parameter eta=1.15 Pa·s,0.991
+0.23,Casson,1043,Fitting equation y=0.55x+32.3; R²=0.997; viscosity parameter eta=0.3 Pa·s,0.997
+0.44,Bingham,3703,Fitting equation y=2.41x+3703; R²=0.98; viscosity parameter eta=2.41 Pa·s,0.98
+0.44,Casson,3080,Fitting equation y=0.60x+55.5; R²=0.992; viscosity parameter eta=0.36 Pa·s,0.992
+0.65,Bingham,6491,Fitting equation y=2.73x+6491; R²=0.976; viscosity parameter eta=2.73 Pa·s,0.976
+0.65,Casson,5625,Fitting equation y=0.64x+75; R²=0.985; viscosity parameter eta=0.41 Pa·s,0.985
+0.86,Bingham,8825,Fitting equation y=2.79x+8825; R²=0.995; viscosity parameter eta=2.79033 Pa·s,0.995
+0.86,Casson,7627,Fitting equation y=0.65x+87.4; R²=0.992; viscosity parameter eta=0.42 Pa·s,0.992
