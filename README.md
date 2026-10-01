@@ -1,201 +1,195 @@
 # MR Fluid Quantitative Research
-A literature-based quantitative study of magnetorheological (MR) fluid behaviour using published experimental data from three research papers.
-The project focuses on three connected aspects of MR fluid behaviour:
-* flow response under non-uniform magnetic fields,
-* sensitivity of yield-stress estimates to constitutive-model selection, and
-* transient response to changes in magnetic field.
-The analysis was carried out in Python using data extracted from the cited papers. The original published observations are kept separate from values calculated during the analysis.
+Literature-based quantitative re-analysis of published experimental results on magnetorheological (MR) fluids using structured data, Python analysis, statistical calculations and data visualization.
+## Project Overview
+Magnetorheological (MR) fluids are smart materials whose rheological behaviour changes in response to an applied magnetic field. Their behaviour is important in applications such as adaptive dampers, valves, clutches and other controllable systems.
+This project quantitatively analyses published experimental results from three research papers covering different aspects of MR-fluid behaviour:
+- non-uniform magnetic-field flow response;
+- steady-state rheological behaviour and constitutive-model comparison;
+- transient response to rapid changes in magnetic field.
+The project does **not** contain original laboratory measurements. The numerical data were derived from published experimental results and analysed using Python.
+The main purpose is to develop a reproducible workflow for extracting, organising, analysing and interpreting experimental literature.
 ---
-## Research question
-MR fluids can change their rheological behaviour when exposed to a magnetic field, but their useful performance depends on more than the steady-state response alone.
-This project investigates:
-1. How the reported flow response changes with magnetic field and formulation.
-2. How much the estimated yield stress changes when Bingham and Casson models are used.
-3. Whether simple field-to-yield-stress scaling can describe the available data.
-4. How increasing and decreasing field conditions differ in the reported non-uniform-field experiments.
-5. What the published transient-response measurements indicate about the dynamic timescale of MR fluid behaviour.
-6. How steady-state and transient behaviour can be considered together when thinking about MR fluid system design.
+## Research Questions
+The analysis focuses on the following questions:
+1. How does magnetic excitation affect the reported MR-fluid response?
+2. How does MR-fluid formulation affect the measured response?
+3. How different are increasing and decreasing loading paths in a non-uniform magnetic field?
+4. How much does the choice of constitutive model affect the estimated yield stress?
+5. What response times are reported for MR fluids under rapid magnetic-field changes?
+6. What experimental questions can be formulated from the combined observations?
 ---
-## Approach
-The analysis uses three published studies as the primary sources.
-### P1 - Non-uniform magnetic field
-Kubík et al. (2023) investigated MR fluids subjected to non-uniform magnetic fields.
-The project uses the reported slope factor
-$$
-K = \frac{k(B)}{k(0)}
-$$
-to compare the flow response of three MR fluid formulations during increasing and decreasing magnetic-field conditions.
-The three formulations considered are:
-* MRF-122EG
-* MRF-132DG
-* MRF-140CG
-The analysis examines the reported field-response curves, formulation differences, and the difference between increasing and decreasing field paths.
-A source value that was not reported for MRF-122EG at 300 A-turns during the decreasing stage is retained as missing in the dataset. No value was estimated or fabricated.
-### P2 - Rheological model comparison
-Xie, Liu and Cai (2020) reported rheological measurements of MR fluid at four magnetic flux densities.
-The project compares yield-stress estimates obtained using:
-* the Bingham model, and
-* the Casson model.
-The analysis calculates the percentage difference between the two estimates and also performs an exploratory power-law analysis of yield stress against magnetic flux density.
-The power-law analysis is treated only as a descriptive exploration because the source provides four field levels. It is not presented as a universal constitutive law.
-### P3 - Transient response
-Kubík et al. (2022) investigated the transient response of MR fluid following rapid changes in magnetic field.
-The project preserves the response-time ranges reported in the paper rather than reconstructing individual measurements that were not published as complete point-level data.
-The analysis therefore focuses on the reported millisecond-scale response envelope and the published master-curve relationship.
----
-## Main observations
-### 1. Non-uniform-field response
-The largest increasing-stage value of the reported slope factor was:
-**K = 6.71 for MRF-122EG at 600 A-turns.**
-The three formulations showed substantially different responses under the reported conditions.
-The increasing and decreasing field paths also did not behave identically, indicating that the measured response depends on the field history and formulation.
-This project refers to the calculated quantity as a **path-dependence indicator** rather than thermodynamic hysteresis.
-### 2. Constitutive-model sensitivity
-For the P2 data:
-* Bingham yield stress: **1369-8825 Pa**
-* Casson yield stress: **1043-7627 Pa**
-* Mean difference between the two estimates: **16.89%**
-The choice of constitutive model therefore has a measurable effect on the reported yield-stress estimate.
-### 3. Exploratory scaling
-A log-log power-law fit was examined using the four reported magnetic-field levels.
-The resulting exponents were approximately:
-* Bingham: **n = 1.431**
-* Casson: **n = 1.532**
-These results are treated as exploratory descriptions of the available data and should not be interpreted as universal material laws.
-### 4. Transient behaviour
-The published P3 response-time ranges considered in this project were:
-* MRHCCS4-A/B: **5.5-1.9 ms**
-* MRF-132DG/MRC-C1L: **1.4-0.8 ms**
-The reported values therefore place the observed transient response on a millisecond timescale.
-The published master curve is also retained:
-$$
-T^* = 4.1939\,Mn^{-0.35}
-$$
-No point-level response-time pairs were reconstructed from the published ranges.
----
-## Research framework
-The three papers address different parts of MR fluid behaviour.
-The project therefore does not combine their measurements as though they were obtained from one experiment.
-Instead, they are treated as three separate evidence streams:
-**P1:** magnetic field → flow response
-**P2:** magnetic field → yield stress
-**P3:** field/shear/material conditions → transient response
-These observations are then used to formulate a possible future experimental direction in which steady-state performance and dynamic response are considered together.
-The proposed experiment is future work and was **not performed as part of this project**.
----
-## Data integrity
-A major part of this project was keeping the distinction between published data and derived analysis clear.
-The following rules were followed:
-* Published numerical values were transcribed into structured CSV files.
-* Derived quantities are calculated by Python rather than manually entered.
-* Missing source observations remain missing.
-* Published ranges are kept as ranges.
-* Point-level measurements are not reconstructed when they are not available in the source.
-* Exploratory fits are explicitly identified as exploratory.
-* The three source papers are analysed separately before the cross-paper synthesis.
-* No new experimental measurements were added.
-The complete source verification and audit notes are available in the `audit/` directory.
----
-## Project structure
-```text
-MR_Fluid_MITACS_FINAL/
-│
-├── README.md
-├── CITATION.cff
-├── PROJECT_MANIFEST.csv
-├── requirements.txt
-├── .gitignore
-│
-├── data/
-│   ├── 00_MASTER_literature_dataset_43_records.csv
-│   ├── 01_P1_nonuniform_field_fluid_properties.csv
-│   ├── 02_P1_nonuniform_field_flow_response.csv
-│   ├── 03_P2_rheology_yield_stress.csv
-│   ├── 04_P3_transient_fluid_properties.csv
-│   ├── 05_P3_transient_response_times.csv
-│   ├── 06_P3_other_reported_results.csv
-│   ├── DATA_DICTIONARY.md
-│   └── ...
-│
-├── src/
-│   └── MR_Fluid_quantitative_analysis.py
-│
-├── results/
-│   └── derived quantitative results
-│
-├── figures/
-│   └── research figures generated by the analysis
-│
-├── report/
-│   └── MITACS_LEVEL_RESEARCH_REPORT.md
-│
-├── references/
-│   └── SOURCE_PAPERS.md
-│
-└── audit/
-    ├── SOURCE_VERIFICATION.md
-    ├── FINAL_AUDIT_CHECKLIST.md
-    └── REPRODUCIBILITY_TESTS.md
-```
----
-## Reproducibility
-The complete analysis can be regenerated from the supplied source-data tables.
-### Requirements
-Python 3.x with the packages listed in:
-```text
-requirements.txt
-```
-### Run the analysis
-From the project root:
-```bash
-python src/MR_Fluid_quantitative_analysis.py
-```
-The script reads the structured data in `data/`, performs the quantitative analysis, writes the derived tables to `results/`, and regenerates the figures in `figures/`.
-No external dataset is required to reproduce the calculations contained in this repository.
----
-## Source papers
-### P1
+## Source Papers
+### P1 — Non-uniform magnetic-field response
 Kubík, M. et al. (2023).
-**Magnetorheological fluids subjected to non-uniform magnetic fields: experimental characterization.**
-*Smart Materials and Structures*, 32, 035007.
-DOI: 10.1088/1361-665X/acb473
-### P2
-Xie, L., Liu, Y. and Cai, J. (2020).
-**Analysis and Experimental Study on Rheological Performances of Magnetorheological Fluids.**
-*Mechanika*, 26(1), 31-34.
-DOI: 10.5755/j01.mech.26.1.25244
-### P3
+*Magnetorheological fluids subjected to non-uniform magnetic fields: experimental characterization.*
+Smart Materials and Structures, 32, 035007.
+This paper provides the data used for the non-uniform-field flow analysis, including MR-fluid formulation properties, pressure-flow response, slope factors and increasing/decreasing loading paths.
+### P2 — Rheological model comparison
+Xie, J., Liu, C., & Cai, D. (2020).
+*Analysis and Experimental Study on Rheological Performances of Magnetorheological Fluids.*
+Mechanika, 26(1), 31-34.
+This paper provides the Bingham and Casson yield-stress values used for the constitutive-model comparison.
+### P3 — Transient response
 Kubík, M. et al. (2022).
-**Transient response of magnetorheological fluid on rapid change of magnetic field in shear mode.**
-*Scientific Reports*, 12, 10612.
-DOI: 10.1038/s41598-022-14718-5
-Full source details and access information are provided in:
+*Transient response of magnetorheological fluid on rapid change of magnetic field in shear mode.*
+Scientific Reports, 12, 10612.
+This paper provides the transient response measurements and reported relationships used for the response-time analysis.
+Detailed source information is stored in:
+`references/SOURCE_PAPERS.md`
+---
+## Dataset
+The project contains **43 source-derived literature records**:
+| Source | Records |
+|---|---:|
+| P1 | 27 |
+| P2 | 8 |
+| P3 | 8 |
+| **Total** | **43** |
+The master dataset is:
+`data/00_MASTER_literature_dataset_43_records.csv`
+Additional source-specific datasets are stored in the `data/` directory.
+The dataset preserves source information such as:
+- source paper;
+- source table, figure or section;
+- material/sample;
+- experimental condition;
+- measured quantity;
+- units;
+- data status.
+### Missing Data
+Values that are not reported in the source papers are not estimated.
+For example, the unavailable MRF-122EG decreasing-stage value at 300 A-turns is retained as missing rather than being interpolated.
+Published ranges are also retained as ranges when the source does not provide enough information to reconstruct individual observations.
+---
+# Analysis
+## P1 — Non-uniform Magnetic Field
+P1 examines MR-fluid behaviour in a non-uniform magnetic field using three formulations:
+| Fluid | Iron content | Base viscosity |
+|---|---:|---:|
+| MRF-122EG | 22 vol.% | 56 cP |
+| MRF-132DG | 32 vol.% | 156 cP |
+| MRF-140CG | 40 vol.% | 648 cP |
+The project analyses the reported pressure-flow slope factor:
+`K = k(B) / k(0)`
+where:
+- `k(B)` is the pressure-flow slope at the applied magnetic condition;
+- `k(0)` is the zero-field pressure-flow slope.
+### Maximum increasing-stage K
+| Fluid | Maximum increasing-stage K |
+|---|---:|
+| MRF-122EG | 6.71 |
+| MRF-132DG | 2.76 |
+| MRF-140CG | 1.61 |
+For MRF-122EG, the tabulated values include:
+- 900 A-turns: K = 6.60
+- 600 A-turns: K = 6.71
+- 300 A-turns: K = 2.27
+- 0 A-turns: K = 1.00
+The project uses the structured table values for quantitative analysis and records the small discrepancy between the source table and prose in the project audit.
+### Loading-path analysis
+A descriptive path-dependence indicator is calculated as:
+`Path gap (%) = 100 × (K_increasing - K_decreasing) / K_increasing`
+The active-field comparison excludes:
+- the 0 A-turns baseline;
+- the unavailable MRF-122EG 300 A-turns decreasing-stage observation.
+Mean active-field path gaps are:
+| Fluid | Mean path gap |
+|---|---:|
+| MRF-122EG | +74.23% |
+| MRF-132DG | +34.80% |
+| MRF-140CG | -8.57% |
+This quantity is used as a **path-dependence indicator**. It is not described as a thermodynamic hysteresis measurement.
+---
+# P2 — Yield-Stress and Constitutive-Model Analysis
+P2 reports Bingham and Casson yield-stress estimates at four magnetic flux densities.
+| Magnetic flux density | Bingham | Casson |
+|---:|---:|---:|
+| 0.23 T | 1369 Pa | 1043 Pa |
+| 0.44 T | 3703 Pa | 3080 Pa |
+| 0.65 T | 6491 Pa | 5625 Pa |
+| 0.86 T | 8825 Pa | 7627 Pa |
+From 0.23 T to 0.86 T:
+- Bingham yield stress increases by approximately 6.45×;
+- Casson yield stress increases by approximately 7.31×.
+The Casson estimate is lower than the Bingham estimate at every field level.
+The percentage difference is calculated as:
+`Difference (%) = 100 × (Bingham - Casson) / Bingham`
+The mean difference is:
+**16.89%**
+This demonstrates that the selected constitutive model can materially affect the numerical yield-stress estimate.
+### Exploratory Field Scaling
+An exploratory power-law relationship was also examined:
+`τ_y = a B^n`
+where:
+- `τ_y` = yield stress;
+- `B` = magnetic flux density;
+- `a` = fitted coefficient;
+- `n` = fitted exponent.
+The four-point exploratory fits give:
+| Model | Exponent n | Log-scale R² |
+|---|---:|---:|
+| Bingham | 1.431 | 0.990 |
+| Casson | 1.532 | 0.983 |
+These fits are treated as **exploratory descriptions of the four available field levels**, not as universal constitutive laws.
+---
+# P3 — Transient Response
+P3 investigates the transient response of MR fluid following rapid changes in magnetic field.
+Reported hardware response measurements include:
+- T63I = 0.21 ms;
+- T90I = 0.335 ms at 1 A;
+- T90I = 0.365 ms at 2 A;
+- approximately 0.4 ms initial dead time.
+The source also reports rheological response-time ranges:
+| Fluid/sample group | Reported T90 |
+|---|---:|
+| MRHCCS4-A / MRHCCS4-B | 5.5–1.9 ms |
+| MRF-132DG / MRC-C1L | 1.4–0.8 ms |
+The project retains these as published ranges rather than creating artificial point-level observations.
+The source reports that transient response is influenced by factors including:
+- shear rate;
+- magnetization;
+- carrier-fluid viscosity.
+The reported master relationship is also recorded:
+`T* = 4.1939 Mn^-0.35`
+This equation is treated as a **source-reported relationship** and is not independently refitted by this project.
+---
+# Main Quantitative Findings
+The main results of the analysis are:
+| Analysis | Result |
+|---|---|
+| P1 maximum increasing-stage K | 6.71, MRF-122EG at 600 A-turns |
+| P1 mean active-field path gap | 28.39% |
+| P1 MRF-122EG mean path gap | +74.23% |
+| P1 MRF-132DG mean path gap | +34.80% |
+| P1 MRF-140CG mean path gap | -8.57% |
+| P2 Bingham yield-stress range | 1369–8825 Pa |
+| P2 Casson yield-stress range | 1043–7627 Pa |
+| Mean Casson difference from Bingham | 16.89% lower |
+| P2 Bingham exploratory exponent | n = 1.431 |
+| P2 Casson exploratory exponent | n = 1.532 |
+| P3 reported T90 envelope | 0.8–5.5 ms |
+These values describe the selected published observations and calculations performed from them. They are not presented as universal MR-fluid properties.
+---
+# Cross-Paper Interpretation
+The three papers provide complementary information:
 ```text
-references/SOURCE_PAPERS.md
-```
----
-## Limitations
-This is a literature-based quantitative research project rather than a new experimental study.
-The main limitations are:
-1. The analysis is restricted to the data reported by the three selected papers.
-2. The P2 exploratory scaling analysis uses only four magnetic-field levels.
-3. The P1 formulation comparison contains only three formulations and is therefore descriptive rather than a universal concentration law.
-4. The P3 source reports response-time ranges for the relevant measurements rather than complete point-level datasets.
-5. Differences in experimental setup and material conditions between the three papers prevent direct numerical merging of all measurements into one constitutive model.
-These limitations are kept explicit because the purpose of the project is to analyse published evidence without overstating what the data can support.
----
-## What this project demonstrates
-This project demonstrates a complete literature-to-analysis workflow:
-**research papers → source extraction → structured dataset → quantitative analysis → derived results → figures → scientific interpretation**
-The main emphasis is not simply on producing graphs, but on maintaining traceability between published observations, calculations, and conclusions.
----
-## Status
-**Project status: Complete.**
-This repository represents the final version of the project. The analysis, datasets, figures, report, references, and audit material are included in the repository.
-No experimental data were collected for this project.
-No unpublished experimental results are claimed.
----
-## Author
-**Forum Tailor**
-B.Tech Robotics & Automation
-Zeal College of Engineering and Research, Pune, India
+P1
+Non-uniform field
+       ↓
+Formulation + loading path
+       ↓
+Flow response
+
+P2
+Magnetic flux density
+       ↓
+Yield stress
+       ↓
+Constitutive-model dependence
+
+P3
+Magnetic-field change
+       ↓
+Transient rheological response
+       ↓
+Response time
